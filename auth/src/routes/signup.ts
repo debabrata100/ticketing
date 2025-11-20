@@ -26,6 +26,7 @@ router.post(
     }
     const user = User.build({ email, password });
     await user.save();
+    console.log('deb---user', user);
     // generate
     const userJwt = jwt.sign(
       { id: user.id, email: user.email },
