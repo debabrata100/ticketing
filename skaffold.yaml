@@ -15,11 +15,19 @@ build:
         manual:
           - src: '*.ts'
             dest: .
+    - image: debabrata100/ticketing-tickets
+      context: tickets
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.ts'
+            dest: .
     - image: debabrata100/ticketing-client
       context: client
       docker:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: "**/*.js" 
-            dest: . 
+          - src: '**/*.js'
+            dest: .

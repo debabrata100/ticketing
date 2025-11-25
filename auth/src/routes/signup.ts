@@ -1,10 +1,9 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { body } from 'express-validator';
-import { BadrequestError } from '../errors/bad-request.error';
+import { BadrequestError, validateRequest } from '@deb-ticketing/common';
 import { User } from '../models/user';
 import 'express-async-errors';
 import jwt from 'jsonwebtoken';
-import { validateRequest } from '../middlewares/validate-request';
 
 const router = express.Router();
 
@@ -26,7 +25,6 @@ router.post(
     }
     const user = User.build({ email, password });
     await user.save();
-    console.log('deb---user', user);
     // generate
     const userJwt = jwt.sign(
       { id: user.id, email: user.email },
