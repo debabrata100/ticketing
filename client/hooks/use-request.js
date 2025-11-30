@@ -27,8 +27,6 @@ const useRequest = ({ url, method, body, onSuccess }) => {
   const doRequest = async () => {
     try {
       setErrors(null);
-      const signupUrl = endpointConfig.signup;
-
       const response = await client[method](url, body);
       if (onSuccess) {
         onSuccess(response.data);
