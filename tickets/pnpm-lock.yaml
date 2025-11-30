@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@deb-ticketing/common':
-        specifier: ^1.0.7
-        version: 1.0.7
+        specifier: ^1.0.8
+        version: 1.0.8
       '@types/cookie-session':
         specifier: ^2.0.49
         version: 2.0.49
@@ -244,8 +244,8 @@ packages:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
 
-  '@deb-ticketing/common@1.0.7':
-    resolution: {integrity: sha512-/6dQlJQkeMUB5wlkon6jpyEuh7rhsLGesQH814XgMzw22J5rN3IB8D1EuHhfNQuylyYY1mLdnqYVs1JjtQZXwg==}
+  '@deb-ticketing/common@1.0.8':
+    resolution: {integrity: sha512-qXtdAko+GfLyxqbkUJ+IChlIp4+ZDaynH+5rDeq3mvpJ/IurRCtTBVQVEtLXA8dTop9RKO2Mj38+Q7qUCLHOcA==}
 
   '@emnapi/core@1.7.1':
     resolution: {integrity: sha512-o1uhUASyo921r2XtHYOHy7gdkGLge8ghBEQHMWmyJFoXlpU58kIrhhN3w26lpQb6dspetweapMn2CSNwQ8I4wg==}
@@ -1163,6 +1163,9 @@ packages:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
     deprecated: Glob versions prior to v9 are no longer supported
 
+  google-protobuf@3.21.4:
+    resolution: {integrity: sha512-MnG7N936zcKTco4Jd2PX2U96Kf9PxygAPKBug+74LHzmHXmceN16MmRcdgZv+DGef/S9YvQAfRsNCn4cjf9yyQ==}
+
   gopd@1.2.0:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
     engines: {node: '>= 0.4'}
@@ -1698,6 +1701,11 @@ packages:
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     hasBin: true
 
+  nats@1.4.12:
+    resolution: {integrity: sha512-Jf4qesEF0Ay0D4AMw3OZnKMRTQm+6oZ5q8/m4gpy5bTmiDiK6wCXbZpzEslmezGpE93LV3RojNEG6dpK/mysLQ==}
+    engines: {node: '>= 8.0.0'}
+    hasBin: true
+
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
@@ -1715,6 +1723,11 @@ packages:
   node-int64@0.4.0:
     resolution: {integrity: sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==}
 
+  node-nats-streaming@0.3.2:
+    resolution: {integrity: sha512-exeT+FwGYW3UbBSzu8a7ykwWoY6R/vjQLr1RoZ1gnoJ9F66WVvpMZQWCZzLxlf9XRpJTTygcp6P1+WRw9h07Sg==}
+    engines: {node: '>= 8.0.0'}
+    hasBin: true
+
   node-releases@2.0.27:
     resolution: {integrity: sha512-nmh3lCkYZ3grZvqcCH+fjmQ7X+H0OeZgP40OierEaAptX4XofMh5kwNbWh7lBduUzCcV/8kZ+NDLCwm2iorIlA==}
 
@@ -1725,6 +1738,10 @@ packages:
   npm-run-path@4.0.1:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}
     engines: {node: '>=8'}
+
+  nuid@1.1.6:
+    resolution: {integrity: sha512-Eb3CPCupYscP1/S1FQcO5nxtu6l/F3k0MQ69h7f5osnsemVk5pkc8/5AyalVT+NCfra9M71U8POqF6EZa6IHvg==}
+    engines: {node: '>= 8.16.0'}
 
   object-inspect@1.13.4:
     resolution: {integrity: sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==}
@@ -2104,6 +2121,9 @@ packages:
       jest-util:
         optional: true
 
+  ts-nkeys@1.0.16:
+    resolution: {integrity: sha512-1qrhAlavbm36wtW+7NtKOgxpzl+70NTF8xlz9mEhiA5zHMlMxjj3sEVKWm3pGZhHXE0Q3ykjrj+OSRVaYw+Dqg==}
+
   ts-node-dev@2.0.0:
     resolution: {integrity: sha512-ywMrhCfH6M75yftYvrvNarLEY+SUXtUvU8/0Z6llrHQVBx12GiFk5sStF8UdfE/yfzk9IAq7O5EEbTQsxlBI8w==}
     engines: {node: '>=0.8.0'}
@@ -2138,6 +2158,9 @@ packages:
   tsscmp@1.0.6:
     resolution: {integrity: sha512-LxhtAkPDTkVCMQjt2h6eBVY28KCjikZqZfMcC15YBeNjkgUpdCfBu5HoiOTDu86v6smE8yOjyEktJ8hlbANHQA==}
     engines: {node: '>=0.6.x'}
+
+  tweetnacl@1.0.3:
+    resolution: {integrity: sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==}
 
   type-detect@4.0.8:
     resolution: {integrity: sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==}
@@ -2464,12 +2487,13 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
-  '@deb-ticketing/common@1.0.7':
+  '@deb-ticketing/common@1.0.8':
     dependencies:
       cookie-session: 2.1.1
       express: 4.21.2
       express-validator: 7.3.1
       jsonwebtoken: 9.0.2
+      node-nats-streaming: 0.3.2
     transitivePeerDependencies:
       - supports-color
 
@@ -3525,6 +3549,8 @@ snapshots:
       once: 1.4.0
       path-is-absolute: 1.0.1
 
+  google-protobuf@3.21.4: {}
+
   gopd@1.2.0: {}
 
   graceful-fs@4.2.11: {}
@@ -4207,6 +4233,11 @@ snapshots:
 
   napi-postinstall@0.3.4: {}
 
+  nats@1.4.12:
+    dependencies:
+      nuid: 1.1.6
+      ts-nkeys: 1.0.16
+
   natural-compare@1.4.0: {}
 
   negotiator@0.6.3: {}
@@ -4221,6 +4252,12 @@ snapshots:
 
   node-int64@0.4.0: {}
 
+  node-nats-streaming@0.3.2:
+    dependencies:
+      google-protobuf: 3.21.4
+      nats: 1.4.12
+      nuid: 1.1.6
+
   node-releases@2.0.27: {}
 
   normalize-path@3.0.0: {}
@@ -4228,6 +4265,8 @@ snapshots:
   npm-run-path@4.0.1:
     dependencies:
       path-key: 3.1.1
+
+  nuid@1.1.6: {}
 
   object-inspect@1.13.4: {}
 
@@ -4605,6 +4644,10 @@ snapshots:
       babel-jest: 30.2.0(@babel/core@7.28.5)
       jest-util: 30.2.0
 
+  ts-nkeys@1.0.16:
+    dependencies:
+      tweetnacl: 1.0.3
+
   ts-node-dev@2.0.0(@types/node@24.10.1)(typescript@5.9.3):
     dependencies:
       chokidar: 3.6.0
@@ -4651,6 +4694,8 @@ snapshots:
   tslib@2.8.1: {}
 
   tsscmp@1.0.6: {}
+
+  tweetnacl@1.0.3: {}
 
   type-detect@4.0.8: {}
 
