@@ -1,9 +1,8 @@
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
-import request from 'supertest';
-import { app } from '../app';
 import jwt from 'jsonwebtoken';
 
+jest.mock('../nats-wrapper.ts');
 declare global {
   var signin: () => string[];
 }
@@ -23,6 +22,7 @@ beforeAll(async () => {
 });
 
 beforeEach(async () => {
+  jest.clearAllMocks();
   if (mongoose.connection.db) {
     const collections = await mongoose.connection.db.collections();
     for (let collection of collections) {
