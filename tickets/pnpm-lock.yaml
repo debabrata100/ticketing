@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@deb-ticketing/common':
-        specifier: ^1.0.8
-        version: 1.0.8
+        specifier: ^1.0.9
+        version: 1.0.9
       '@types/cookie-session':
         specifier: ^2.0.49
         version: 2.0.49
@@ -247,8 +247,8 @@ packages:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
 
-  '@deb-ticketing/common@1.0.8':
-    resolution: {integrity: sha512-qXtdAko+GfLyxqbkUJ+IChlIp4+ZDaynH+5rDeq3mvpJ/IurRCtTBVQVEtLXA8dTop9RKO2Mj38+Q7qUCLHOcA==}
+  '@deb-ticketing/common@1.0.9':
+    resolution: {integrity: sha512-TRGgca9hlmP/aXQ2wlVipKB95TQhPcceUDT1PWRie3Gzwh3y+6mCt9B6DWGA9AVMlfl+YpREkOJAD+dAKo6jkg==}
 
   '@emnapi/core@1.7.1':
     resolution: {integrity: sha512-o1uhUASyo921r2XtHYOHy7gdkGLge8ghBEQHMWmyJFoXlpU58kIrhhN3w26lpQb6dspetweapMn2CSNwQ8I4wg==}
@@ -2490,7 +2490,7 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
-  '@deb-ticketing/common@1.0.8':
+  '@deb-ticketing/common@1.0.9':
     dependencies:
       cookie-session: 2.1.1
       express: 4.21.2
