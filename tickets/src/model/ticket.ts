@@ -1,4 +1,5 @@
 import monoose from 'mongoose';
+import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
 
 interface TicketAttrs {
   title: string;
@@ -10,6 +11,7 @@ interface TicketDoc extends monoose.Document {
   title: string;
   price: number;
   userId: string;
+  version: number;
 }
 
 interface TicketModel extends monoose.Model<TicketDoc> {
@@ -36,11 +38,13 @@ const ticketSchema = new monoose.Schema(
       transform(doc, ret) {
         (ret as any).id = ret._id;
         delete (ret as any)._id;
-        delete (ret as any).__v;
       },
     },
   }
 );
+
+ticketSchema.set('versionKey', 'version');
+ticketSchema.plugin(updateIfCurrentPlugin);
 
 ticketSchema.statics.build = (attrs: TicketAttrs) => {
   return new Ticket(attrs);

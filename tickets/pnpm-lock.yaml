@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@deb-ticketing/common':
-        specifier: ^1.0.9
-        version: 1.0.9
+        specifier: ^1.0.11
+        version: 1.0.11
       '@types/cookie-session':
         specifier: ^2.0.49
         version: 2.0.49
@@ -41,6 +41,9 @@ importers:
       mongoose:
         specifier: ^8.3.4
         version: 8.20.1(socks@2.8.7)
+      mongoose-update-if-current:
+        specifier: ^1.4.0
+        version: 1.4.0(mongoose@8.20.1(socks@2.8.7))
       node-nats-streaming:
         specifier: ^0.3.2
         version: 0.3.2
@@ -247,8 +250,8 @@ packages:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
     engines: {node: '>=12'}
 
-  '@deb-ticketing/common@1.0.9':
-    resolution: {integrity: sha512-TRGgca9hlmP/aXQ2wlVipKB95TQhPcceUDT1PWRie3Gzwh3y+6mCt9B6DWGA9AVMlfl+YpREkOJAD+dAKo6jkg==}
+  '@deb-ticketing/common@1.0.11':
+    resolution: {integrity: sha512-9OOJBB1wDoFqCRnMh0HJn8NxGkacIqeQvygwQXWQScqctjeT+zWUPfheR5j2HwdPiiLjPC61XYyu/AbCYyDuUg==}
 
   '@emnapi/core@1.7.1':
     resolution: {integrity: sha512-o1uhUASyo921r2XtHYOHy7gdkGLge8ghBEQHMWmyJFoXlpU58kIrhhN3w26lpQb6dspetweapMn2CSNwQ8I4wg==}
@@ -890,6 +893,9 @@ packages:
   cookies@0.9.1:
     resolution: {integrity: sha512-TG2hpqe4ELx54QER/S3HQ9SRVnQnGBtKUz5bLQWtYAQ+o6GpgMs6sYUvaiJjVxb+UXwhRhAEP3m7LbsIZ77Hmw==}
     engines: {node: '>= 0.8'}
+
+  core-js@3.47.0:
+    resolution: {integrity: sha512-c3Q2VVkGAUyupsjRnaNX6u8Dq2vAdzm9iuPj5FW0fRxzlxgq9Q39MDq10IvmQSpLgHQNyQzQmOo6bgGHmH3NNg==}
 
   create-require@1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
@@ -1681,6 +1687,12 @@ packages:
       socks:
         optional: true
 
+  mongoose-update-if-current@1.4.0:
+    resolution: {integrity: sha512-Rau2nvdiLExqXrSOwMMgDYQgf/fwTJQpPidTcT7C9UMQ282gTKXjDuh5vrjVvVQpfuvkiPis0tGHdXffaD54bg==}
+    engines: {node: '>=8.0.0'}
+    peerDependencies:
+      mongoose: '>=5.0.0'
+
   mongoose@8.20.1:
     resolution: {integrity: sha512-G+n3maddlqkQrP1nXxsI0q20144OSo+pe+HzRRGqaC4yK3FLYKqejqB9cbIi+SX7eoRsnG23LHGYNp8n7mWL2Q==}
     engines: {node: '>=16.20.1'}
@@ -1878,6 +1890,9 @@ packages:
   readdirp@3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
+
+  regenerator-runtime@0.13.11:
+    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
 
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
@@ -2490,7 +2505,7 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
-  '@deb-ticketing/common@1.0.9':
+  '@deb-ticketing/common@1.0.11':
     dependencies:
       cookie-session: 2.1.1
       express: 4.21.2
@@ -3260,6 +3275,8 @@ snapshots:
     dependencies:
       depd: 2.0.0
       keygrip: 1.1.0
+
+  core-js@3.47.0: {}
 
   create-require@1.1.1: {}
 
@@ -4203,6 +4220,13 @@ snapshots:
     optionalDependencies:
       socks: 2.8.7
 
+  mongoose-update-if-current@1.4.0(mongoose@8.20.1(socks@2.8.7)):
+    dependencies:
+      core-js: 3.47.0
+      kareem: 2.6.3
+      mongoose: 8.20.1(socks@2.8.7)
+      regenerator-runtime: 0.13.11
+
   mongoose@8.20.1(socks@2.8.7):
     dependencies:
       bson: 6.10.4
@@ -4380,6 +4404,8 @@ snapshots:
   readdirp@3.6.0:
     dependencies:
       picomatch: 2.3.1
+
+  regenerator-runtime@0.13.11: {}
 
   require-directory@2.1.1: {}
 
