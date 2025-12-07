@@ -1,6 +1,7 @@
-import mongoose from 'mongoose';
+import mongoose, { version } from 'mongoose';
 import { OrderStatus } from '@deb-ticketing/common';
 import { TicketDoc } from './ticket';
+import { updateIfCurrentPlugin } from 'mongoose-update-if-current';
 export { OrderStatus };
 interface OrderAttrs {
   userId: string;
@@ -46,11 +47,13 @@ const orderSchema = new mongoose.Schema(
       transform(doc, ret) {
         (ret as any).id = ret._id;
         delete (ret as any)._id;
-        delete (ret as any).__v;
       },
     },
   }
 );
+
+orderSchema.set('versionKey', 'version');
+orderSchema.plugin(updateIfCurrentPlugin);
 
 orderSchema.statics.build = (attrs: OrderAttrs) => {
   return new Order(attrs);
