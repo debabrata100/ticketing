@@ -12,6 +12,7 @@ interface TicketDoc extends monoose.Document {
   price: number;
   userId: string;
   version: number;
+  orderId?: string;
 }
 
 interface TicketModel extends monoose.Model<TicketDoc> {
@@ -31,6 +32,9 @@ const ticketSchema = new monoose.Schema(
     userId: {
       type: String,
       required: true,
+    },
+    orderId: {
+      type: String,
     },
   },
   {
