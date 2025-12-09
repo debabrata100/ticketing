@@ -39,3 +39,11 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
+    - image: debabrata100/ticketing-expiration
+      context: expiration
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.ts'
+            dest: .
