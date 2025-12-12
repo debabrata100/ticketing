@@ -4,7 +4,6 @@ import endpointConfig from '../api/endpoint-config';
 import Header from '../components/Header';
 
 const App = ({ Component, pageProps, currentUser }) => {
-  console.log(currentUser);
   return (
     <div>
       <Header currentUser={currentUser} />
