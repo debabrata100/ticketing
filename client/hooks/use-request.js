@@ -24,15 +24,16 @@ const useRequest = ({ url, method, body, onSuccess }) => {
       handleApiErrors(err);
     }
   };
-  const doRequest = async () => {
+  const doRequest = async (props = {}) => {
     try {
       setErrors(null);
-      const response = await client[method](url, body);
+      const response = await client[method](url, { ...body, ...props });
       if (onSuccess) {
         onSuccess(response.data);
       }
     } catch (err) {
-      handleApiErrors(err);
+      console.log('err', err);
+      // handleApiErrors(err);
       // throw err;
     }
   };
