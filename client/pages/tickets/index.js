@@ -21,7 +21,7 @@ export async function getServerSideProps(context) {
 
 export default function Tickets({ tickets }) {
   return (
-    <div className="d-flex justify-content-between align-items-center">
+    <div className="d-flex align-items-center">
       {tickets &&
         tickets.map((ticket) => {
           return <ProductCard key={ticket.id} {...ticket} />;
