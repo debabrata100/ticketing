@@ -8,6 +8,8 @@ import { errorHandler, NotFoundError } from '@deb-ticketing/common';
 import cookiesession from 'cookie-session';
 import 'express-async-errors';
 import { metricsRouter } from './routes/metrics';
+import responseTime from 'response-time';
+import { metricsMiddleware } from './middlewares/metrix';
 
 const app = express();
 app.set('trust-proxy', true);
@@ -18,6 +20,8 @@ app.use(
     secureProxy: process.env.NODE_ENV !== 'test',
   })
 );
+
+app.use(responseTime(metricsMiddleware));
 
 app.use(metricsRouter);
 app.use(currentUserRouter);
