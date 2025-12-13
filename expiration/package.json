@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node-dev --poll src/index.ts",
     "test": "NODE_ENV=test jest --watchAll --no-cache",
-    "build": "tsc -b",
+    "build": "tsc",
     "start:prod": "node build/index.js"
   },
   "jest": {
