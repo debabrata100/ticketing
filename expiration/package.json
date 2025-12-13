@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node-dev --poll src/index.ts",
-    "test": "NODE_ENV=test jest --watchAll --no-cache"
+    "test": "NODE_ENV=test jest --watchAll --no-cache",
+    "build": "tsc -b",
+    "start:prod": "node build/index.js"
   },
   "jest": {
     "preset": "ts-jest",
