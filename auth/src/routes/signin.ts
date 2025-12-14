@@ -5,6 +5,7 @@ import 'express-async-errors';
 import { validateRequest, BadrequestError } from '@deb-ticketing/common';
 import { User } from '../models/user';
 import { Password } from '../services/password';
+import logger from '../logger/logger';
 
 const router = express.Router();
 
@@ -22,6 +23,7 @@ router.post(
     const { email, password } = req.body;
     const existingUser = await User.findOne({ email });
     if (!existingUser) {
+      logger.error(`Invalid Credentials`);
       throw new BadrequestError('Invalid Credentials');
     }
     const passwordMatch = await Password.compare(

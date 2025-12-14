@@ -5,6 +5,9 @@ import { signupRouter } from './routes/signup';
 import { signoutRouter } from './routes/signout';
 import { errorHandler, NotFoundError } from '@deb-ticketing/common';
 
+import winston from 'winston';
+import LokiTransport from 'winston-loki';
+
 import cookiesession from 'cookie-session';
 import 'express-async-errors';
 import { metricsRouter } from './routes/metrics';
