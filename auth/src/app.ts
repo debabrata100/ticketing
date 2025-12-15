@@ -5,14 +5,11 @@ import { signupRouter } from './routes/signup';
 import { signoutRouter } from './routes/signout';
 import { errorHandler, NotFoundError } from '@deb-ticketing/common';
 
-import winston from 'winston';
-import LokiTransport from 'winston-loki';
-
 import cookiesession from 'cookie-session';
 import 'express-async-errors';
 import { metricsRouter } from './routes/metrics';
 import responseTime from 'response-time';
-import { metricsMiddleware } from './middlewares/metrix';
+import { prometheusMetrics as promResponseTimeMiddleware } from '@deb-ticketing/common';
 
 const app = express();
 app.set('trust-proxy', true);
@@ -24,7 +21,7 @@ app.use(
   })
 );
 
-app.use(responseTime(metricsMiddleware));
+app.use(responseTime(promResponseTimeMiddleware));
 
 app.use(metricsRouter);
 app.use(currentUserRouter);
