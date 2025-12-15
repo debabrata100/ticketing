@@ -1,29 +1,14 @@
-import winston from 'winston';
-import LokiTransport from 'winston-loki';
-
+// import winston from 'winston';
+// import LokiTransport from 'winston-loki';
+import { BaseLogger, LoggerConfig } from '@deb-ticketing/common';
 const serviceName = process.env.SERVICE_NAME || 'unknown-service';
+class AuthLogger extends BaseLogger<LoggerConfig> {
+  readonly serviceName = serviceName;
+  readonly LOKI_URL = process.env.LOKI_URL || '';
+  readonly interval = 5;
+  readonly level = 'info';
+}
 
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.json(),
-  defaultMeta: {
-    service: serviceName,
-    env: process.env.NODE_ENV || 'development',
-  },
-  transports: [
-    new winston.transports.Console(),
-
-    new LokiTransport({
-      host: process.env.LOKI_URL || 'http://loki-srv:3100',
-      labels: {
-        app: serviceName,
-      },
-      json: true,
-      replaceTimestamp: true,
-      batching: true,
-      interval: 5, // seconds
-    }),
-  ],
-});
+const logger = new AuthLogger();
 
 export default logger;
