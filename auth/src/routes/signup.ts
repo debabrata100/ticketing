@@ -37,7 +37,7 @@ router.post(
     req.session = {
       jwt: userJwt,
     };
-
+    logger.info('Signup succeeded');
     res.status(201).send(user);
   }
 );

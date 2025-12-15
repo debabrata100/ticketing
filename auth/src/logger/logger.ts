@@ -1,17 +1,8 @@
-import { createLogger } from 'winston';
-import LokiTransport from 'winston-loki';
-import winston from 'winston';
-const options = {
-  transports: [
-    new LokiTransport({
-      host: process.env.LOKI_URL || 'http://loki-srv:3100',
-      json: true,
-      labels: { app: 'auth' },
-      format: winston.format.json(),
-    }),
-  ],
-};
+import { BaseLogger } from '@deb-ticketing/common';
 
-const logger = createLogger(options);
+const logger = new BaseLogger({
+  serviceName: process.env.SERVICE_NAME || 'auth',
+  LOKI_URL: process.env.LOKI_URL || 'http://loki-srv:3100',
+});
 
 export default logger;

@@ -31,6 +31,7 @@ router.post(
       password
     );
     if (!passwordMatch) {
+      logger.error(`Invalid Credentials`);
       throw new BadrequestError('Invalid Credentials');
     }
     const userJwt = jwt.sign(
@@ -42,7 +43,7 @@ router.post(
     req.session = {
       jwt: userJwt,
     };
-
+    logger.info(`Login succeeded`);
     res.status(200).send(existingUser);
   }
 );
