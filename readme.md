@@ -18,3 +18,9 @@
   - Loki server url: http://loki-srv:9090
   - loki-srv: is the cluster Ip service of loki deployment that will help you to connect to loki server
 - click `save and test` at bottom
+
+# loki commands for ingress
+
+- kubectl logs deploy/loki-depl
+- https://ticketing.dev/monitoring/loki/ready
+- https://ticketing.dev/monitoring/loki/metrics

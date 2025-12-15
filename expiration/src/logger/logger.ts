@@ -6,7 +6,7 @@ const options = {
     new LokiTransport({
       host: process.env.LOKI_URL || 'http://loki-srv:3100',
       json: true,
-      labels: { app: 'auth' },
+      labels: { app: 'server-monitoring-service' },
       format: winston.format.json(),
     }),
   ],

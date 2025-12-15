@@ -16,6 +16,10 @@ spec:
         - name: expiration
           image: debabrata100/ticketing-expiration
           env:
+            - name: SERVICE_NAME
+              value: expiration
+            - name: LOKI_URL
+              value: http://loki-srv:3100
             - name: NATS_ClIENT_ID
               valueFrom:
                 fieldRef:
