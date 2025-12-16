@@ -10,7 +10,9 @@ router.get(
   currentUser,
   requireAuth,
   async (req: Request, res: Response) => {
-    logger.info(`current user delayed 3000ms ${req.path}`);
+    logger.info(`current user fetched`, {
+      userId: req.currentUser?.id,
+    });
     res.status(200).send({ currentUser: req.currentUser || null });
   }
 );

@@ -4,6 +4,7 @@ import { body } from 'express-validator';
 import { Ticket } from '../model/ticket';
 import { TicketCreatedPublisher } from '../events/publishers/ticket-created-publisher';
 import { natsWrapper } from '../nats-wrapper';
+import logger from '../logger/logger';
 const router = express.Router();
 
 router.post(
@@ -35,7 +36,10 @@ router.post(
       userId: ticket.userId,
       version: ticket.version,
     });
-    req.logger.info('Ticket Creation succeeded');
+    logger.info('Ticket Creation succeeded', {
+      ticketId: ticket.id,
+      userId: req.currentUser.id,
+    });
     res.status(201).send(ticket);
   }
 );

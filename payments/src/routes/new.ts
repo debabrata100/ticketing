@@ -51,7 +51,11 @@ router.post(
     });
 
     await payment.save();
-    logger.info(`Payment with id ${payment.id} created successfully`);
+    logger.info(`Payment with id created successfully`, {
+      paymentId: payment.id,
+      orderId: order.id,
+      userId: req.currentUser.id,
+    });
 
     new PaymentCreatedPublisher(natsWrapper.client).publish({
       id: payment.id,

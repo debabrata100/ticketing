@@ -38,7 +38,10 @@ router.delete(
       },
     });
 
-    logger.info(`Order with id ${order.id} cancelled successfully`);
+    logger.info(`Order cancelled successfully`, {
+      orderId: order.id,
+      userId: req.currentUser.id,
+    });
 
     res.status(204).send(order);
   }

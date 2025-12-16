@@ -47,7 +47,7 @@ const start = async () => {
     console.error(err);
   }
   app.listen(3000, () => {
-    console.log(`Auth listening at 3000`);
+    console.log(`Orders listening at 3000`);
   });
 };
 

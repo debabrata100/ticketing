@@ -53,7 +53,10 @@ router.post(
       ticket,
     });
     await order.save();
-    logger.info(`Order with id ${order.id} created successfully`);
+    logger.info(`Order with id created successfully`, {
+      orderId: order.id,
+      userId: req.currentUser.id,
+    });
 
     // publish event
     new OrderCreatedPublisher(natsWrapper.client).publish({

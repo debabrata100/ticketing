@@ -20,9 +20,10 @@ router.get(
     if (order.userId !== req.currentUser.id) {
       throw new NotAuthorizedError();
     }
-    logger.info(
-      `Fetched order with id ${order.id} for user ${req.currentUser.id}`
-    );
+    logger.info(`Fetched order for user `, {
+      userId: req.currentUser.id,
+      orderId: order.id,
+    });
     res.send(order);
   }
 );

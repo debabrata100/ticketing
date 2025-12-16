@@ -10,6 +10,7 @@ import {
 } from '@deb-ticketing/common';
 import { natsWrapper } from '../nats-wrapper';
 import { TicketUpdatedPublisher } from '../events/publishers/ticket-updated-publisher';
+import logger from '../logger/logger';
 
 const router = express.Router();
 
@@ -53,7 +54,10 @@ router.put(
       userId: ticket.userId,
       version: ticket.version,
     });
-    req.logger.info('Ticket update succeeded');
+    logger.info('Ticket update succeeded', {
+      ticketId: ticket.id,
+      userId: req.currentUser.id,
+    });
     res.status(200).send(ticket);
   }
 );

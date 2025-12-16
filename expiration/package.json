@@ -23,7 +23,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.10.0",
   "dependencies": {
-    "@deb-ticketing/common": "^1.0.24",
+    "@deb-ticketing/common": "^1.0.25",
     "@types/winston": "^2.4.4",
     "bull": "^4.16.5",
     "node-nats-streaming": "^0.3.2",
