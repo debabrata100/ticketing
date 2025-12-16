@@ -43,7 +43,10 @@ router.post(
     req.session = {
       jwt: userJwt,
     };
-    logger.info(`Login succeeded`, { userId: existingUser.id });
+    logger.info(`Login succeeded`, {
+      userId: existingUser.id,
+      requestId: req.requestId,
+    });
     res.status(200).send(existingUser);
   }
 );

@@ -18,6 +18,14 @@ import logger from '../logger/logger';
 
 const router = express.Router();
 
+declare global {
+  namespace Express {
+    interface Request {
+      requestId: string;
+    }
+  }
+}
+
 router.post(
   '/api/payments',
   requireAuth,
@@ -55,6 +63,7 @@ router.post(
       paymentId: payment.id,
       orderId: order.id,
       userId: req.currentUser.id,
+      requestId: req.requestId,
     });
 
     new PaymentCreatedPublisher(natsWrapper.client).publish({

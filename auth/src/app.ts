@@ -14,6 +14,7 @@ import 'express-async-errors';
 import { metricsRouter } from './routes/metrics';
 import responseTime from 'response-time';
 import { useLogger } from './middlewares/use-logger';
+import { requestIdMiddleware } from './middlewares/request-id.middleware';
 
 const app = express();
 app.set('trust-proxy', true);
@@ -27,6 +28,9 @@ app.use(
 
 app.use(responseTime(promResponseTimeMiddleware));
 app.use(useLogger);
+
+// requestIdMiddleware should be used befor all routes to ensure every request has an ID
+app.use(requestIdMiddleware);
 
 app.use(metricsRouter);
 app.use(currentUserRouter);

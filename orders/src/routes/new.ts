@@ -56,6 +56,7 @@ router.post(
     logger.info(`Order with id created successfully`, {
       orderId: order.id,
       userId: req.currentUser.id,
+      requestId: req.requestId,
     });
 
     // publish event

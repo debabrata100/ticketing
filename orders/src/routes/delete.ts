@@ -11,6 +11,14 @@ import logger from '../logger/logger';
 
 const router = express.Router();
 
+declare global {
+  namespace Express {
+    interface Request {
+      requestId: string;
+    }
+  }
+}
+
 router.delete(
   '/api/orders/:orderId',
   requireAuth,
@@ -41,6 +49,7 @@ router.delete(
     logger.info(`Order cancelled successfully`, {
       orderId: order.id,
       userId: req.currentUser.id,
+      requestId: req.requestId,
     });
 
     res.status(204).send(order);

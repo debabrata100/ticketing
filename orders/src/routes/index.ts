@@ -10,7 +10,10 @@ router.get('/api/orders', requireAuth, async (req: Request, res: Response) => {
     userId: req.currentUser.id,
   }).populate('ticket');
 
-  logger.info(`Fetched orders for user`, { userId: req.currentUser.id });
+  logger.info(`Fetched orders for user`, {
+    userId: req.currentUser.id,
+    requestId: req.requestId,
+  });
   res.send(orders);
 });
 

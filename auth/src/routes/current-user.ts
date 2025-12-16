@@ -5,6 +5,14 @@ import logger from '../logger/logger';
 
 const router = express.Router();
 
+declare global {
+  namespace Express {
+    interface Request {
+      requestId: string;
+    }
+  }
+}
+
 router.get(
   '/api/users/currentuser',
   currentUser,
@@ -12,6 +20,7 @@ router.get(
   async (req: Request, res: Response) => {
     logger.info(`current user fetched`, {
       userId: req.currentUser?.id,
+      requestId: req.requestId,
     });
     res.status(200).send({ currentUser: req.currentUser || null });
   }

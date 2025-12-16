@@ -16,6 +16,7 @@ import { deleteOrdersRouter } from './routes/delete';
 import { indexOrdersRouter } from './routes/index';
 import { newOrdersRouter } from './routes/new';
 import { showOrdersRouter } from './routes/show';
+import { requestIdMiddleware } from './middlewares/request-id.middleware';
 
 const app = express();
 app.set('trust-proxy', true);
@@ -30,7 +31,7 @@ app.use(responseTime(promResponseTimeMiddleware));
 app.use(useLogger);
 
 app.use(currentUser);
-
+app.use(requestIdMiddleware);
 app.use(metricsRouter);
 app.use(deleteOrdersRouter);
 app.use(indexOrdersRouter);

@@ -23,6 +23,7 @@ router.get(
     logger.info(`Fetched order for user `, {
       userId: req.currentUser.id,
       orderId: order.id,
+      requestId: req.requestId,
     });
     res.send(order);
   }

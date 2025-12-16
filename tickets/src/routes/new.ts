@@ -39,6 +39,7 @@ router.post(
     logger.info('Ticket Creation succeeded', {
       ticketId: ticket.id,
       userId: req.currentUser.id,
+      requestId: req.requestId,
     });
     res.status(201).send(ticket);
   }

@@ -15,6 +15,7 @@ import { indexTicketsRouter } from './routes';
 import { updateTicketsRouter } from './routes/update';
 import { metricsRouter } from './routes/metrics';
 import { useLogger } from './middlewares/use-logger';
+import { requestIdMiddleware } from './middlewares/request-id.middleware';
 
 const app = express();
 app.set('trust-proxy', true);
@@ -28,6 +29,7 @@ app.use(
 app.use(responseTime(promResponseTimeMiddleware));
 app.use(useLogger);
 
+app.use(requestIdMiddleware);
 app.use(metricsRouter);
 app.use(currentUser);
 app.use(createTicketRouter);

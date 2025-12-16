@@ -11,7 +11,10 @@ router.get('/api/tickets/:id', async (req: Request, res: Response) => {
   if (!ticket) {
     throw new NotFoundError();
   }
-  logger.info('Show ticket succeeded', { ticketId: ticket.id });
+  logger.info('Show ticket succeeded', {
+    ticketId: ticket.id,
+    requestId: req.requestId,
+  });
   res.status(200).send(ticket);
 });
 

@@ -57,6 +57,7 @@ router.put(
     logger.info('Ticket update succeeded', {
       ticketId: ticket.id,
       userId: req.currentUser.id,
+      requestId: req.requestId,
     });
     res.status(200).send(ticket);
   }

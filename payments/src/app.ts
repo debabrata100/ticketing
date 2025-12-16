@@ -11,6 +11,7 @@ import { createChargeRouter } from './routes/new';
 import { metricsRouter } from './routes/metrics';
 import { useLogger } from './middlewares/use-logger';
 import responseTime from 'response-time';
+import { requestIdMiddleware } from './middlewares/request-id.middleware';
 
 const app = express();
 app.set('trust-proxy', true);
@@ -24,6 +25,7 @@ app.use(
 app.use(responseTime(promResponseTimeMiddleware));
 app.use(useLogger);
 
+app.use(requestIdMiddleware);
 app.use(metricsRouter);
 app.use(currentUser);
 
