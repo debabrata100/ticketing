@@ -5,8 +5,12 @@ import {
   errorHandler,
   NotFoundError,
   currentUser,
+  prometheusMetrics as promResponseTimeMiddleware,
 } from '@deb-ticketing/common';
 import { createChargeRouter } from './routes/new';
+import { metricsRouter } from './routes/metrics';
+import { useLogger } from './middlewares/use-logger';
+import responseTime from 'response-time';
 
 const app = express();
 app.set('trust-proxy', true);
@@ -17,6 +21,10 @@ app.use(
     secureProxy: process.env.NODE_ENV !== 'test',
   })
 );
+app.use(responseTime(promResponseTimeMiddleware));
+app.use(useLogger);
+
+app.use(metricsRouter);
 app.use(currentUser);
 
 app.use(createChargeRouter);

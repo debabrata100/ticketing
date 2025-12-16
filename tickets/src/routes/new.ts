@@ -35,6 +35,7 @@ router.post(
       userId: ticket.userId,
       version: ticket.version,
     });
+    req.logger.info('Ticket Creation succeeded');
     res.status(201).send(ticket);
   }
 );

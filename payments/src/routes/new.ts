@@ -14,6 +14,7 @@ import { stripe } from '../stripe';
 import { Payment } from '../models/payment';
 import { PaymentCreatedPublisher } from '../events/publishers/payment-created-publisher';
 import { natsWrapper } from '../nats-wrapper';
+import logger from '../logger/logger';
 
 const router = express.Router();
 
@@ -50,6 +51,7 @@ router.post(
     });
 
     await payment.save();
+    logger.info(`Payment with id ${payment.id} created successfully`);
 
     new PaymentCreatedPublisher(natsWrapper.client).publish({
       id: payment.id,

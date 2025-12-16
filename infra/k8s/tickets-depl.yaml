@@ -16,6 +16,10 @@ spec:
         - name: tickets
           image: debabrata100/ticketing-tickets
           env:
+            - name: SERVICE_NAME
+              value: tickets
+            - name: LOKI_URL
+              value: http://loki-srv:3100
             - name: NATS_ClIENT_ID
               valueFrom:
                 fieldRef:

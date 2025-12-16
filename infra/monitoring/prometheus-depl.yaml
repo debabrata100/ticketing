@@ -10,6 +10,15 @@ data:
       - job_name: "auth"
         static_configs:
           - targets: ["auth-srv:3000"]
+      - job_name: "tickets"
+        static_configs:
+          - targets: ["tickets-srv:3000"]
+      - job_name: "orders"
+        static_configs:
+          - targets: ["orders-srv:3000"]
+      - job_name: "payments"
+        static_configs:
+          - targets: ["payments-srv:3000"]
 
 ---
 apiVersion: v1

@@ -5,7 +5,12 @@ import {
   errorHandler,
   NotFoundError,
   currentUser,
+  prometheusMetrics as promResponseTimeMiddleware,
 } from '@deb-ticketing/common';
+
+import { metricsRouter } from './routes/metrics';
+import { useLogger } from './middlewares/use-logger';
+import responseTime from 'response-time';
 
 import { deleteOrdersRouter } from './routes/delete';
 import { indexOrdersRouter } from './routes/index';
@@ -21,8 +26,12 @@ app.use(
     secureProxy: process.env.NODE_ENV !== 'test',
   })
 );
+app.use(responseTime(promResponseTimeMiddleware));
+app.use(useLogger);
+
 app.use(currentUser);
 
+app.use(metricsRouter);
 app.use(deleteOrdersRouter);
 app.use(indexOrdersRouter);
 app.use(newOrdersRouter);

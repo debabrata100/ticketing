@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@deb-ticketing/common':
-        specifier: ^1.0.15
-        version: 1.0.15
+        specifier: ^1.0.24
+        version: 1.0.24
       '@types/cookie-session':
         specifier: ^2.0.49
         version: 2.0.49
@@ -20,6 +20,9 @@ importers:
       '@types/mongoose':
         specifier: ^5.11.97
         version: 5.11.97(snappy@7.3.3)(socks@2.8.7)
+      '@types/response-time':
+        specifier: ^2.3.9
+        version: 2.3.9
       cookie-session:
         specifier: ^2.1.1
         version: 2.1.1
@@ -47,6 +50,12 @@ importers:
       node-nats-streaming:
         specifier: ^0.3.2
         version: 0.3.2
+      prom-client:
+        specifier: ^15.1.3
+        version: 15.1.3
+      response-time:
+        specifier: ^2.3.4
+        version: 2.3.4
       ts-node-dev:
         specifier: ^2.0.0
         version: 2.0.0(@types/node@24.10.1)(typescript@5.9.3)
@@ -257,8 +266,8 @@ packages:
   '@dabh/diagnostics@2.0.8':
     resolution: {integrity: sha512-R4MSXTVnuMzGD7bzHdW2ZhhdPC/igELENcq5IjEverBvq5hn1SXCWcsi6eSsdWP0/Ur+SItRRjAktmdoX/8R/Q==}
 
-  '@deb-ticketing/common@1.0.15':
-    resolution: {integrity: sha512-9BV5O8MjgO7ZUfIlDIzoD8QAzotWjS4AT2Ppx2UoVOV5HOFKkLEzdnAg5N1tt6aOZHc7oA9Tjr/pH0/mvdEiKw==}
+  '@deb-ticketing/common@1.0.24':
+    resolution: {integrity: sha512-DXtCJGkCNdQnxrvvo+hWTHNmMYAKwHNpLpDsRwAsktaTLjR5586cG+d5z0lNXBDaCp+IenX6p4Z1Ubj9TTH6/w==}
 
   '@emnapi/core@1.7.1':
     resolution: {integrity: sha512-o1uhUASyo921r2XtHYOHy7gdkGLge8ghBEQHMWmyJFoXlpU58kIrhhN3w26lpQb6dspetweapMn2CSNwQ8I4wg==}
@@ -502,6 +511,10 @@ packages:
     resolution: {integrity: sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A==}
     engines: {node: ^14.21.3 || >=16}
 
+  '@opentelemetry/api@1.9.0':
+    resolution: {integrity: sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg==}
+    engines: {node: '>=8.0.0'}
+
   '@paralleldrive/cuid2@2.3.1':
     resolution: {integrity: sha512-XO7cAxhnTZl0Yggq6jOgjiOHhbgcO4NqFqwSmQpjK3b6TEE6Uj/jfSk6wzYyemh3+I0sHirKSetjQwn5cZktFw==}
 
@@ -645,6 +658,9 @@ packages:
 
   '@types/range-parser@1.2.7':
     resolution: {integrity: sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==}
+
+  '@types/response-time@2.3.9':
+    resolution: {integrity: sha512-w5i5/y/1N3hkSBru1dat7Pf/YzdFLAANbKR78i2VIPnKw1Ub2ZNXE/n3K4v1BBMIIbAccgxpGZT8lIuLW284Dw==}
 
   '@types/send@0.17.6':
     resolution: {integrity: sha512-Uqt8rPBE8SY0RK8JB1EzVOIZ32uqy8HwdxCnoCOsYrvnswqmFZ/k+9Ikidlk/ImhsdvBsloHbAlewb2IEBV/Og==}
@@ -907,6 +923,9 @@ packages:
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
+
+  bintrees@1.0.2:
+    resolution: {integrity: sha512-VOMgTMwjAaUG580SXn3LacVgjurrbMme7ZZNYGSSV7mmtY6QQRh0Eg3pwIcntQ77DErK1L0NxkbetjcoXzVwKw==}
 
   body-parser@1.20.3:
     resolution: {integrity: sha512-7rAxByjUMqQ3/bHJy7D6OGXvx/MMc4IqBn/X0fcM1QUcAItpZrBEYhWGem+tzXH90c+G01ypMcYJBO9Y30203g==}
@@ -2063,6 +2082,10 @@ packages:
     resolution: {integrity: sha512-9uBdv/B4EefsuAL+pWqueZyZS2Ba+LxfFeQ9DN14HU4bN8bhaxKdkpjpB6fs9+pSjIBu+FXQHImEg8j/Lw0+vA==}
     engines: {node: ^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0}
 
+  prom-client@15.1.3:
+    resolution: {integrity: sha512-6ZiOBfCywsD4k1BN9IX0uZhF+tJkV8q8llP64G5Hajs4JOeVLPCwpPVcpXy3BwYiUGgyJzsJJQeOIv7+hDSq8g==}
+    engines: {node: ^16 || ^18 || >=20}
+
   protobufjs@7.5.4:
     resolution: {integrity: sha512-CvexbZtbov6jW2eXAvLukXjXUW1TzFaivC46BpWc/3BpcCysb5Vffu+B3XHMm8lVEuy2Mm4XGex8hBSg1yapPg==}
     engines: {node: '>=12.0.0'}
@@ -2124,6 +2147,10 @@ packages:
     resolution: {integrity: sha512-RfqAvLnMl313r7c9oclB1HhUEAezcpLjz95wFH4LVuhk9JF/r22qmVP9AMmOU4vMX7Q8pN8jwNg/CSpdFnMjTQ==}
     engines: {node: '>= 0.4'}
     hasBin: true
+
+  response-time@2.3.4:
+    resolution: {integrity: sha512-fiyq1RvW5/Br6iAtT8jN1XrNY8WPu2+yEypLbaijWry8WDZmn12azG9p/+c+qpEebURLlQmqCB8BNSu7ji+xQQ==}
+    engines: {node: '>= 0.8.0'}
 
   rimraf@2.7.1:
     resolution: {integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==}
@@ -2309,6 +2336,9 @@ packages:
 
   tar-stream@3.1.7:
     resolution: {integrity: sha512-qJj60CXt7IU1Ffyc3NJMjh6EkuCFej46zUqJ4J7pqYlThyd9bO0XBTmcOIhSzZJVWfsLks0+nle/j538YAW9RQ==}
+
+  tdigest@0.1.2:
+    resolution: {integrity: sha512-+G0LLgjjo9BZX2MfdvPfH+MKLCrxlXSYec5DaPYP1fe6Iyhf0/fSmJ0bFiZ1F8BT6cGXl2LpltQptzjXKWEkKA==}
 
   test-exclude@6.0.0:
     resolution: {integrity: sha512-cAGWPIyOHU6zlmg88jwm7VRyXnMN7iV68OGAbYDk/Mh/xC/pzVPlQtY6ngoIH/5/tciuhGfvESU8GrHrcxD56w==}
@@ -2765,13 +2795,14 @@ snapshots:
       enabled: 2.0.0
       kuler: 2.0.0
 
-  '@deb-ticketing/common@1.0.15':
+  '@deb-ticketing/common@1.0.24':
     dependencies:
       cookie-session: 2.1.1
       express: 4.21.2
       express-validator: 7.3.1
       jsonwebtoken: 9.0.2
       node-nats-streaming: 0.3.2
+      prom-client: 15.1.3
       winston: 3.19.0
       winston-loki: 6.1.3
     transitivePeerDependencies:
@@ -3091,6 +3122,8 @@ snapshots:
 
   '@noble/hashes@1.8.0': {}
 
+  '@opentelemetry/api@1.9.0': {}
+
   '@paralleldrive/cuid2@2.3.1':
     dependencies:
       '@noble/hashes': 1.8.0
@@ -3256,6 +3289,11 @@ snapshots:
   '@types/qs@6.14.0': {}
 
   '@types/range-parser@1.2.7': {}
+
+  '@types/response-time@2.3.9':
+    dependencies:
+      '@types/express': 4.17.25
+      '@types/node': 25.0.2
 
   '@types/send@0.17.6':
     dependencies:
@@ -3485,6 +3523,8 @@ snapshots:
   baseline-browser-mapping@2.8.30: {}
 
   binary-extensions@2.3.0: {}
+
+  bintrees@1.0.2: {}
 
   body-parser@1.20.3:
     dependencies:
@@ -4779,6 +4819,11 @@ snapshots:
       ansi-styles: 5.2.0
       react-is: 18.3.1
 
+  prom-client@15.1.3:
+    dependencies:
+      '@opentelemetry/api': 1.9.0
+      tdigest: 0.1.2
+
   protobufjs@7.5.4:
     dependencies:
       '@protobufjs/aspromise': 1.1.2
@@ -4847,6 +4892,11 @@ snapshots:
       is-core-module: 2.16.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
+
+  response-time@2.3.4:
+    dependencies:
+      depd: 2.0.0
+      on-headers: 1.1.0
 
   rimraf@2.7.1:
     dependencies:
@@ -5079,6 +5129,10 @@ snapshots:
     transitivePeerDependencies:
       - bare-abort-controller
       - react-native-b4a
+
+  tdigest@0.1.2:
+    dependencies:
+      bintrees: 1.0.2
 
   test-exclude@6.0.0:
     dependencies:

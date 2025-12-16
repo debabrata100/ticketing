@@ -12,6 +12,7 @@ import { Ticket } from '../models/ticket';
 import { Order } from '../models/order';
 import { OrderCreatedPublisher } from '../events/publishers/order-created-publisher';
 import { natsWrapper } from '../nats-wrapper';
+import logger from '../logger/logger';
 
 const EXPIRATION_WINDOW_SECONDS = 1 * 60;
 
@@ -52,6 +53,7 @@ router.post(
       ticket,
     });
     await order.save();
+    logger.info(`Order with id ${order.id} created successfully`);
 
     // publish event
     new OrderCreatedPublisher(natsWrapper.client).publish({

@@ -53,7 +53,7 @@ router.put(
       userId: ticket.userId,
       version: ticket.version,
     });
-
+    req.logger.info('Ticket update succeeded');
     res.status(200).send(ticket);
   }
 );

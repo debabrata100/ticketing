@@ -7,6 +7,7 @@ router.get('/api/tickets', async (req: Request, res: Response) => {
   const tickets = await Ticket.find({
     orderId: undefined,
   });
+  req.logger.info('Fetching ticket succeeded');
   res.send(tickets);
 });
 

@@ -3,13 +3,17 @@ import { currentUserRouter } from './routes/current-user';
 import { signinRouter } from './routes/signin';
 import { signupRouter } from './routes/signup';
 import { signoutRouter } from './routes/signout';
-import { errorHandler, NotFoundError } from '@deb-ticketing/common';
+import {
+  errorHandler,
+  NotFoundError,
+  prometheusMetrics as promResponseTimeMiddleware,
+} from '@deb-ticketing/common';
 
 import cookiesession from 'cookie-session';
 import 'express-async-errors';
 import { metricsRouter } from './routes/metrics';
 import responseTime from 'response-time';
-import { prometheusMetrics as promResponseTimeMiddleware } from '@deb-ticketing/common';
+import { useLogger } from './middlewares/use-logger';
 
 const app = express();
 app.set('trust-proxy', true);
@@ -22,6 +26,7 @@ app.use(
 );
 
 app.use(responseTime(promResponseTimeMiddleware));
+app.use(useLogger);
 
 app.use(metricsRouter);
 app.use(currentUserRouter);

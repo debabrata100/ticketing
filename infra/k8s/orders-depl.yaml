@@ -16,6 +16,10 @@ spec:
         - name: orders
           image: debabrata100/ticketing-orders
           env:
+            - name: SERVICE_NAME
+              value: orders
+            - name: LOKI_URL
+              value: http://loki-srv:3100
             - name: NATS_ClIENT_ID
               valueFrom:
                 fieldRef:

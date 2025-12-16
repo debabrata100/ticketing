@@ -1,4 +1,4 @@
-import { NotFoundError, requireAuth } from '@deb-ticketing/common';
+import { NotFoundError } from '@deb-ticketing/common';
 import express, { Request, Response } from 'express';
 import { Ticket } from '../model/ticket';
 
@@ -10,6 +10,7 @@ router.get('/api/tickets/:id', async (req: Request, res: Response) => {
   if (!ticket) {
     throw new NotFoundError();
   }
+  req.logger.info('Show ticket succeeded');
   res.status(200).send(ticket);
 });
 
