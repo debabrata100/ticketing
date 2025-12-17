@@ -1,6 +1,6 @@
 # How to run the project
 
-- Lunch docker
+- Launch docker
 - setup kubernetes and ingress
 - edit /etc/hosts and add `127.0.0.1 ticketing.dev`
 - create required kubenetes secrets
